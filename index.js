@@ -21,10 +21,37 @@ const dataBelanjaan = [
 ];
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
-const listBelanjaan = null;
+
+const listBelanjaan = () => {
+  let list = [];
+
+  dataBelanjaan.forEach((e) => {
+    list.push(`- ${e.nama} x ${e.kuantitas}`);
+  });
+
+  return list;
+
+  /* output listBelanjaan
+  [
+    '- Minyak Goreng Delima x 2',
+    '- Beras Mamos x 1',
+    '- Larutan Cap Kaki Empat x 8'
+  ] 
+  */
+};
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
-const totalBelanjaan = null;
+const totalBelanjaan = () => {
+  let total = 0;
+  dataBelanjaan.forEach((e) => {
+    total += e.kuantitas * e.harga;
+  });
+
+  return total;
+  // output dari totalBelanjaan ketika diinvoke
+  // berupa angka
+  // 158000
+};
 
 // ! JANGAN DIMODIFIKASI
 const main = () => {
